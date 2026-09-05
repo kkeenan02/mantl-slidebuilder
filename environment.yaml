@@ -1,0 +1,5 @@
+name: mantl-slidebuilder
+channels:
+  - conda-forge
+dependencies:
+  - nodejs>=20
