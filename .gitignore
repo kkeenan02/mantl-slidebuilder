@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.slidev/
+*.log
+.DS_Store
+
+# Slidev dev bootstrap (regenerated)
+index.html
+
+# exported artefacts
+*-export.pdf
+slides-export.*

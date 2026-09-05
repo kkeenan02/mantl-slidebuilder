@@ -1,0 +1,111 @@
+/* ===================================================================
+   Mantl design system — loaded automatically on every deck.
+   Edit brand values here (accent colours, watermark, tagline).
+   =================================================================== */
+
+/* Hide Slidev's "Goto" quick-jump dialog (the g key), which can stick open. */
+#slidev-goto-dialog {
+  display: none !important;
+}
+
+/* ---- Mantl radar watermark + corner tagline on every slide ---------- */
+.slidev-layout {
+  background-image: url('./radar.svg');
+  background-repeat: no-repeat;
+  background-position: right -80px bottom -80px;
+  background-size: 560px;
+}
+.slidev-layout::after {
+  content: "MANTL \00b7 DECISION INTELLIGENCE";
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ---- Step badge (coloured circle) ---------------------------------- */
+.step-badge {
+  @apply inline-flex items-center justify-center w-7 h-7 rounded-full text-sm font-semibold flex-none border;
+}
+
+/* ---- Agenda number badge ------------------------------------------- */
+.agenda-num {
+  @apply inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-semibold flex-none;
+  color: #5eead4;
+  background: rgba(20, 184, 166, 0.15);
+  border: 1px solid rgba(20, 184, 166, 0.4);
+}
+
+/* ---- Cards --------------------------------------------------------- */
+.card {
+  @apply rounded-lg p-4 border border-l-4 h-full text-left leading-snug;
+}
+.card h3, .card .card-title {
+  @apply font-bold mb-1 text-base;
+}
+.card p, .card .card-body {
+  @apply text-sm opacity-90 m-0;
+}
+.card.compact { @apply p-3; }
+.card.compact .card-title { @apply text-sm mb-0.5; }
+.card.compact .card-body { @apply text-xs; }
+
+/* Accent variants — the traffic-light language of the deck */
+.accent-go      { @apply border-emerald-500 bg-emerald-500/10; }
+.accent-go .card-title, .accent-go h3      { @apply text-emerald-400; }
+
+.accent-warn    { @apply border-amber-500 bg-amber-500/10; }
+.accent-warn .card-title, .accent-warn h3  { @apply text-amber-400; }
+
+.accent-stop    { @apply border-rose-500 bg-rose-500/10; }
+.accent-stop .card-title, .accent-stop h3  { @apply text-rose-400; }
+
+.accent-neutral { @apply border-sky-500 bg-sky-500/10; }
+.accent-neutral .card-title, .accent-neutral h3 { @apply text-sky-400; }
+
+/* ---- Callout strip ------------------------------------------------- */
+.callout {
+  @apply rounded-lg p-3 border-l-4 border-teal-500 bg-teal-500/10 text-left;
+}
+
+/* ---- Pill / tag ---------------------------------------------------- */
+.pill {
+  @apply inline-block rounded-full px-3 py-1 text-xs font-semibold border;
+}
+.pill.accent-go   { @apply text-emerald-400 border-emerald-500 bg-emerald-500/10; }
+.pill.accent-warn { @apply text-amber-400 border-amber-500 bg-amber-500/10; }
+.pill.accent-stop { @apply text-rose-400 border-rose-500 bg-rose-500/10; }
+
+/* ---- Grids --------------------------------------------------------- */
+.card-grid-3 { @apply grid grid-cols-3 gap-3 mt-4; }
+.card-grid-2 { @apply grid grid-cols-2 gap-4 mt-4; }
+
+/* ---- Table styling ------------------------------------------------- */
+.slidev-layout table {
+  @apply w-full border-collapse my-3 text-left;
+  font-size: 0.72em;
+  line-height: 1.35;
+}
+.slidev-layout thead th {
+  @apply bg-teal-500/15 text-teal-300 font-semibold px-3 py-2;
+  border-bottom: 2px solid rgba(20, 184, 166, 0.4);
+}
+.slidev-layout tbody td {
+  @apply px-3 py-1.5 align-top;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+.slidev-layout tbody tr:nth-child(even) {
+  background: rgba(148, 163, 184, 0.06);
+}
+.slidev-layout tbody tr:hover {
+  background: rgba(20, 184, 166, 0.08);
+}
+
+/* Dense slides: smaller heading + body so wide tables/grids clear the margin */
+.dense h1 { @apply text-3xl; }
+.dense { font-size: 0.92em; }
