@@ -1,12 +1,35 @@
+# --- dependencies ---
 node_modules/
+.pnpm-store/
+
+# --- Slidev / Vite build output ---
 dist/
 .slidev/
-*.log
-.DS_Store
+.vite/
+*.local
 
-# Slidev dev bootstrap (regenerated)
+# Slidev dev bootstrap (regenerated on run)
 index.html
 
-# exported artefacts
+# --- exported artefacts ---
 *-export.pdf
+*-export.png
 slides-export.*
+export/
+
+# --- Playwright browser cache (if kept local) ---
+ms-playwright/
+.cache/ms-playwright/
+
+# --- logs ---
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- editor / OS ---
+.DS_Store
+.idea/
+.vscode/
+*.swp

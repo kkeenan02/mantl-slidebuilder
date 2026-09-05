@@ -5,13 +5,14 @@
   "private": true,
   "description": "Mantl-branded Slidev starter. Write slides in Markdown; the Mantl design system, components, and watermark are applied by default.",
   "scripts": {
+    "postinstall": "playwright install chromium",
     "dev": "slidev --open",
     "build": "slidev build",
     "export": "slidev export",
     "export:clicks": "slidev export --with-clicks"
   },
   "dependencies": {
-    "@slidev/cli": "^0.49.0",
+    "@slidev/cli": "^52.19.1",
     "@slidev/theme-seriph": "^0.25.0"
   },
   "devDependencies": {

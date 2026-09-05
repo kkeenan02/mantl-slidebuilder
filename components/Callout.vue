@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   /** accent border/background: teal (default) | go | warn | stop | neutral */
   accent?: 'teal' | 'go' | 'warn' | 'stop' | 'neutral'
 }>()
@@ -11,20 +11,14 @@ const map: Record<string, [string, string]> = {
   stop:    ['rgba(244,63,94,.5)',   'rgba(244,63,94,.10)'],
   neutral: ['rgba(56,189,248,.5)',  'rgba(56,189,248,.10)'],
 }
-</script>
 
-<script lang="ts">
-export default { inheritAttrs: false }
+const style = props.accent && props.accent !== 'teal'
+  ? { borderColor: map[props.accent][0], background: map[props.accent][1] }
+  : {}
 </script>
 
 <template>
-  <div
-    class="callout"
-    :style="accent && accent !== 'teal'
-      ? { borderColor: map[accent][0], background: map[accent][1] }
-      : {}"
-    v-bind="$attrs"
-  >
+  <div class="callout" :style="style">
     <slot />
   </div>
 </template>
